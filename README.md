@@ -136,6 +136,6 @@ He implementado la librería AOS para las animaciones de la web
 
 ## 5. Enlaces de interés
 
-[Enlace a la página desplegada en GitHub Pages](https://luchernan.github.io/vite-project1/)
+[Enlace a la página desplegada en GitHub Pages](https://luchernan.github.io/Pr-cticaFinalDise-o/)
 
 [Enlace al diseño en Figma](https://www.figma.com/design/cDocnmiPRzu4RgK7e3Fwhj/Untitled?node-id=0-1&t=OOTPHuWWmNrJbEB4-1)
