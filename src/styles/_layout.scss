@@ -1,0 +1,440 @@
+@use "globals" as *; // Importa todo desde globals
+/// Responsive breakpoint manager
+//@access public
+// @param {String} $breakpoint - Breakpoint
+//@requires $breakpoints
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  font-family:$font-family-mont;
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero {
+  min-height: 80vh;
+  width: 100%;
+  padding-top: 50px;
+  justify-content: center;
+  background-color: $color-negro;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  // @include respond-to-small {
+  //   height: 100vh;
+  //     flex-direction: row;
+  //     padding-left: 10%;
+  //     justify-content: center;
+  //     align-items: center;
+  // }
+
+  .hero-info {
+    width: 100%;
+    text-align: center;
+    // @include respond-to-small {
+    //   max-width: 30%;
+    //   text-align: left;
+    // }
+
+    .hero-info-heading {
+      font-size: 5rem;
+
+      font-weight: 500;
+      color: $color-blancosmoke;
+    }
+
+    .hero-info-subheading {
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5rem;
+      color: $color-blancosmoke;
+      // @include respond-to-small {
+      //   font-size: 1.3rem;
+      //     letter-spacing: 0.5rem;
+      // }
+    }
+
+    .hero-info-button {
+      margin-top: 30px;
+      padding: 2rem 5rem;
+      display: inline-block;
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      color: $color-blanco;
+      text-decoration: none;
+      letter-spacing: 0.6rem;
+      background-color: $color-boton;
+    }
+  }
+
+  .hero-img {
+    height: auto;
+    width: 80%;
+    margin-bottom: 3rem;
+    // @include respond-to-small {
+    //   min-width: 400px;
+    //     max-width: 1000px;
+    // }
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.about {
+  width: 100%;
+  min-height: 50vh;
+  padding: 10rem 5rem;
+  flex-direction: column;
+  // @include respond-to-small {
+  //   width: 80%;
+  //     margin: 0 auto;
+  //     flex-direction: row;
+  // }
+
+  .about-info {
+    text-align: center;
+    // @include respond-to-small {
+    //   width: 50%;
+    //   text-align: left;
+    //   padding-right: 17rem;
+    // }
+
+    .about-info-heading {
+      font-size: 4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3rem;
+      color: $color-negro;
+    }
+
+    .about-info-desc {
+      font-size: 1.3rem;
+      line-height: 2rem;
+      margin-top: 10px;
+    }
+
+    .about-info-button {
+      padding: 1.6rem 2.6rem;
+      display: inline-block;
+      background-color: $color-boton;
+      color: $color-blancosmoke;
+      text-decoration: none;
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .about-img {
+    margin-top: 50px;
+    width: 200px;
+
+    .about-img-wrapper {
+      margin-top: 50px;
+      height: auto;
+      max-width: 400px;
+      position: relative;
+      display: inline-block;
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+
+      &::after {
+        position: absolute;
+        content: '';
+        right: -5rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 70%;
+        height: 120%;
+        background-color: $color-boton;
+        z-index: -1;
+      }
+    }
+  }
+}
+
+
+.services {
+  flex-direction: column;
+  min-height: 60vh;
+  padding: 10rem 5rem;
+
+  .services-header {
+    width: 100%;
+    text-align: center;
+
+    .services-header-heading {
+      font-size: 4rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: $color-negro;
+    }
+
+    .services-header-desc {
+      font-size: 1.3rem;
+      line-height: 2rem;
+      margin-top: 20px;
+      // @include respond-to-small {
+      //   max-width: 500px;
+      //   padding-top: 20px;
+      //   margin: 0 auto;
+      // }
+    }
+  }
+
+  .services-info {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    // @include respond-to-small {
+    //   flex-direction: row;
+    //   width: 80%;
+    // }
+
+    .service {
+      width: 100%;
+      min-height: 300px;
+      position: relative;
+      transition: 0.3s ease transform;
+      margin: 5px;
+      // @include respond-to-small {
+      // margin: 0;
+      // }
+  
+
+      .service-card {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        transform-style: preserve-3d;
+        transition: 0.3s ease transform;
+        display: block;
+
+        .service-front,
+        .service-back {
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          width: 100%;
+          backface-visibility: hidden;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background-color: rgba(0, 0, 0, 0.13);
+          padding: 10px;
+        }
+
+        .service-back {
+          transform: rotateY(180deg);
+          
+          img {
+            width: 80%;
+            height: 80%;
+          }
+        }
+
+        .service-front {
+          i {
+            font-size: 4rem;
+            color: $color-negro;
+            margin-bottom: 10px;
+          }
+
+          .service-front-heading,
+          .service-back-heading {
+            font-size: 2.5rem;
+            text-transform: capitalize;
+            
+          }
+          
+        }
+      }
+
+      &:hover {
+        .service-card {
+          transform: rotateY(180deg);
+        }
+      }
+
+      &:nth-child(2) {
+        .service-card {
+          .service-front {
+            background-image: url(./images/img-2.jpg);
+            background-size: cover;
+            position: relative;
+            color: $color-blanco;
+
+            &::after {
+              content: '';
+              position: absolute;
+              left: 0;
+              top: 0;
+              height: 100%;
+              width: 100%;
+              background-color: rgba(0, 0, 0, 0.274);
+              z-index: -1;
+            }
+
+            i {
+              color: $color-blanco;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.hire {
+  min-height: 10vh;
+  flex-direction: column;
+  width: 100%;
+  background-color:  $color-gris;
+  padding: 3rem 2rem;
+
+  .hire-heading {
+    color: $color-negro;
+    font-size: 2.2rem;
+    text-align: center;
+  }
+
+  .hire-button {
+    padding: 2rem 3rem;
+    display: inline-block;
+    background-color: $color-boton;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.2rem;
+    margin-top: 10px;
+    color: $color-blancosmoke;
+    transition: 0.3s ease background-color;
+
+    &:hover {
+      background-color: $color-negro;
+    }
+  }
+}
+
+
+
+  
+  @media only screen and (min-width: 768px) {
+    .nav-bar {
+      width: 80%;
+  
+      .nav-list {
+        .hamburger {
+          display: none;
+        }
+  
+        ul {
+          transform: translateX(0);
+          position: initial;
+          padding: 0;
+          z-index: initial;
+          background-color: transparent;
+  
+          li {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  
+    .hero {
+      height: 100vh;
+      flex-direction: row;
+      padding-left: 10%;
+      justify-content: center;
+      align-items: center;
+  
+      .hero-info {
+        max-width: 30%;
+        text-align: left;
+  
+        .hero-info-subheading {
+          font-size: 1.3rem;
+          letter-spacing: 0.5rem;
+        }
+      }
+  
+      .hero-img {
+        min-width: 400px;
+        max-width: 1000px;
+      }
+    }
+  
+    .about {
+      width: 80%;
+      margin: 0 auto;
+      flex-direction: row;
+  
+      .about-info {
+        width: 50%;
+        text-align: left;
+        padding-right: 17rem;
+      }
+    }
+  
+    .services {
+      .services-header {
+        .services-header-desc {
+          max-width: 500px;
+          padding-top: 20px;
+          margin: 0 auto;
+        }
+      }
+  
+      .services-info {
+        flex-direction: row;
+        width: 80%;
+  
+        .service {
+          margin: 0;
+        }
+      }
+    }
+  }
+  
+  @media only screen and (min-width: 1200px) {
+    .hero {
+      .hero-info {
+        .hero-info-heading {
+          font-size: 6rem;
+        }
+  
+        .hero-info-subheading {
+          letter-spacing: 0.8rem;
+        }
+      }
+    }
+  }
+  

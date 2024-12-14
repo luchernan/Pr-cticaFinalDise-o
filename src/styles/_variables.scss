@@ -1,0 +1,29 @@
+//colores
+$color-blanco: #fff;
+$color-negro: #000;
+$color-blancosmoke: whitesmoke;
+$color-boton:#737373;
+$color-gris: #c9c9c9;
+
+
+// Tipografía
+$font-contact-heading: 2.5rem;
+$font-contact-info: 1.4rem;
+$font-icon-footer: 3rem;
+$font-brand-a: 3rem;
+$font-lista:1.8rem;
+$font-family-mont: 'Montserrat', sans-serif;
+
+
+
+$breakpoints: (
+  "medium": (
+    min-width: 800px,
+  ),
+  "large": (
+    min-width: 1000px,
+  ),
+  "huge": (
+    min-width: 1200px,
+  ),
+);

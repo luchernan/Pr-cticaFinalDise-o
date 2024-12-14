@@ -1,0 +1,35 @@
+@use "globals" as *;
+
+
+.footer {
+	min-height: 20vh;
+	width: 100%;
+	background-color: $color-negro;
+	color: $color-blanco;
+	flex-direction: column;
+	text-align: center;
+	padding: 5rem;
+}
+.footer .footer-contact {
+	padding: 20px;
+}
+.footer .footer-contact .footer-contact-heading {
+
+  font-size: $font-contact-heading;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin-bottom: 10px;
+}
+.footer .footer-contact .footer-contact-info {
+
+  font-size: $font-contact-info;
+	padding-top: 10px;
+	letter-spacing: .2rem;
+}
+.footer .footer-social-follow .footer-social-icon a {
+	color: $color-blanco;
+  font-size: $font-icon-footer;
+	margin: .4rem;
+	display: inline-block;
+} 
+
