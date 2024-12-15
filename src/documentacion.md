@@ -124,7 +124,7 @@ En ["_footer.scss"](styles/_footer.scss) están los iconos de las redes sociales
 
  En ["_variables.scss"](styles/_variables.scss) están todas las variables que he usado, tanto como colores, fuentes y tamaños.
 
-En ["_mixins.scss"](styles/_mixins.scss) están los tamaños para implementar las mediaquerys para el diseño movil, que he cambiado en cada etiqueta y clase lo imprescindible para que se vea bien tanto en mi portatil como en el iPhone 14 pro usando el plugin de Chrome Responsive Viewer.
+En ["_mixins.scss"](styles/_mixins.scss) están los tamaños para implementar las mediaquerys (he tenido problemas con los breakpoints y los he dejado comentados en el layout.scss) para el diseño movil, que he cambiado en cada etiqueta y clase lo imprescindible para que se vea bien tanto en mi portatil como en el iPhone 14 pro usando el plugin de Chrome Responsive Viewer.
 
 
 
